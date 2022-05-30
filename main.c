@@ -3,6 +3,14 @@
 #include <windows.h>
 #include <string.h>
 
+#ifdef _WIN32
+#define CLEAR "cls"
+#else
+#define CLEAR "clear"
+#endif
+
+
+
 char kvadrat[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 char kvadrat1[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
@@ -43,16 +51,18 @@ int main(){
         printf("\033[0;32m");
 
         if (tekshiruv(kvadrat) == 2){
+            bot_score++;
+            player_score++;
             printf("\n\n ****************************************\n");
             printf(" *              TIE !!!                 *\n");
             printf(" ****************************************\n");
         }else if (tekshiruv(kvadrat) == -1){    
-            bot_score++;
+            bot_score += 3;
             printf("\n\n ****************************************\n");
             printf(" *         Computer WIN !!!             *\n");
             printf(" ****************************************\n");
         }else{
-            player_score++;
+            player_score += 3;
             printf("\n\n ****************************************\n");
             printf(" *           Human WIN !!!              *\n");
             printf(" ****************************************\n");
@@ -71,7 +81,7 @@ int main(){
 
 
 void show_board(){
-    system(" cls");
+    system(CLEAR);
     printf("\033[0;32m");
     printf("\n ****************************************\n");
     printf(" *   Human (X) | %d : %d | Computer (O)   *\n", player_score, bot_score);
