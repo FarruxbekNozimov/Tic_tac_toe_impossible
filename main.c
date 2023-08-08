@@ -209,40 +209,24 @@ void bots_move() {
 }
 
 int tekshiruv(char kvadrat[]){
-    if (kvadrat[1] == 'X' && kvadrat[2] == 'X' && kvadrat[3] == 'X')
+    if (kvadrat[1] == 'X' && kvadrat[2] == 'X' && kvadrat[3] == 'X' || 
+        kvadrat[4] == 'X' && kvadrat[5] == 'X' && kvadrat[6] == 'X' || 
+        kvadrat[7] == 'X' && kvadrat[8] == 'X' && kvadrat[9] == 'X' ||
+        kvadrat[1] == 'X' && kvadrat[4] == 'X' && kvadrat[7] == 'X' || 
+        kvadrat[2] == 'X' && kvadrat[5] == 'X' && kvadrat[8] == 'X' ||
+        kvadrat[3] == 'X' && kvadrat[6] == 'X' && kvadrat[9] == 'X' ||
+        kvadrat[1] == 'X' && kvadrat[5] == 'X' && kvadrat[9] == 'X' ||
+        kvadrat[3] == 'X' && kvadrat[5] == 'X' && kvadrat[7] == 'X')
         return 1;
-    else if (kvadrat[4] == 'X' && kvadrat[5] == 'X' && kvadrat[6] == 'X')
-        return 1;
-    else if (kvadrat[7] == 'X' && kvadrat[8] == 'X' && kvadrat[9] == 'X')
-        return 1;
-    else if (kvadrat[1] == 'X' && kvadrat[4] == 'X' && kvadrat[7] == 'X')
-        return 1;
-    else if (kvadrat[2] == 'X' && kvadrat[5] == 'X' && kvadrat[8] == 'X')
-        return 1;
-    else if (kvadrat[3] == 'X' && kvadrat[6] == 'X' && kvadrat[9] == 'X')
-        return 1;
-    else if (kvadrat[1] == 'X' && kvadrat[5] == 'X' && kvadrat[9] == 'X')
-        return 1;
-    else if (kvadrat[3] == 'X' && kvadrat[5] == 'X' && kvadrat[7] == 'X')
-        return 1;
-    
-    else if (kvadrat[1] == 'O' && kvadrat[2] == 'O' && kvadrat[3] == 'O')
+    else if (kvadrat[1] == 'O' && kvadrat[2] == 'O' && kvadrat[3] == 'O' || 
+             kvadrat[4] == 'O' && kvadrat[5] == 'O' && kvadrat[6] == 'O' ||
+             kvadrat[7] == 'O' && kvadrat[8] == 'O' && kvadrat[9] == 'O' ||
+             kvadrat[1] == 'O' && kvadrat[4] == 'O' && kvadrat[7] == 'O' ||
+             kvadrat[2] == 'O' && kvadrat[5] == 'O' && kvadrat[8] == 'O' ||
+             kvadrat[3] == 'O' && kvadrat[6] == 'O' && kvadrat[9] == 'O' ||
+             kvadrat[1] == 'O' && kvadrat[5] == 'O' && kvadrat[9] == 'O' ||
+             kvadrat[3] == 'O' && kvadrat[5] == 'O' && kvadrat[7] == 'O')
         return -1;
-    else if (kvadrat[4] == 'O' && kvadrat[5] == 'O' && kvadrat[6] == 'O')
-        return -1;
-    else if (kvadrat[7] == 'O' && kvadrat[8] == 'O' && kvadrat[9] == 'O')
-        return -1;
-    else if (kvadrat[1] == 'O' && kvadrat[4] == 'O' && kvadrat[7] == 'O')
-        return -1;
-    else if (kvadrat[2] == 'O' && kvadrat[5] == 'O' && kvadrat[8] == 'O')
-        return -1;
-    else if (kvadrat[3] == 'O' && kvadrat[6] == 'O' && kvadrat[9] == 'O')
-        return -1;
-    else if (kvadrat[1] == 'O' && kvadrat[5] == 'O' && kvadrat[9] == 'O')
-        return -1;
-    else if (kvadrat[3] == 'O' && kvadrat[5] == 'O' && kvadrat[7] == 'O')
-        return -1;
-
     else if (kvadrat[1] != '1' && kvadrat[2] != '2' && kvadrat[3] != '3' && kvadrat[4] != '4' && kvadrat[5] != '5' && kvadrat[6] != '6' && kvadrat[7] != '7' && kvadrat[8] != '8' && kvadrat[9] != '9')
         return 2;
     else
